@@ -26,7 +26,7 @@ The Y Combinator Data Pipeline is an automated ETL (Extract, Transform, Load) so
 Deploy Your Project Locally
 ===========================
 
-1. Start Airflow on your local machine by running 'astro dev start'.
+1. Start Airflow on your local machine by running `astro dev start`.
 
 This command will spin up 4 Docker containers on your machine, each for a different Airflow component:
 
