@@ -1,0 +1,66 @@
+[0m00:26:52.496342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024A1B0B42F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024A1B14CFE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024A1B14D1C0>]}
+
+
+============================== 00:26:52.504353 | 7f89ba66-2920-498c-b502-44e5546097ef ==============================
+[0m00:26:52.504353 [info ] [MainThread]: Running with dbt=1.8.6
+[0m00:26:52.504353 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\eobay\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt init', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m00:27:29.183152 [debug] [MainThread]: Starter project path: C:\Users\eobay\OneDrive\Desktop\Projects\Y-Combinator_datapipline\.venv\Lib\site-packages\dbt\include\starter_project
+[0m00:27:29.287156 [info ] [MainThread]: 
+Your new dbt project "y_combinator" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m00:27:29.295160 [info ] [MainThread]: Setting up your profile.
+[0m00:31:51.655512 [info ] [MainThread]: Profile y_combinator written to C:\Users\eobay\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m00:31:51.729069 [debug] [MainThread]: Command `dbt init` succeeded at 00:31:51.724481 after 299.47 seconds
+[0m00:31:51.743544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024A348D4410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024A34A92AB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024A33F09880>]}
+[0m00:31:51.756064 [debug] [MainThread]: Flushing usage events
+[0m00:33:59.098714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257F32A4BF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257F32CC890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257F32CD880>]}
+
+
+============================== 00:33:59.105711 | f24c2e22-2257-4da6-9fc1-933b61863f8f ==============================
+[0m00:33:59.105711 [info ] [MainThread]: Running with dbt=1.8.6
+[0m00:33:59.106710 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\eobay\\.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:33:59.151710 [info ] [MainThread]: dbt version: 1.8.6
+[0m00:33:59.152711 [info ] [MainThread]: python version: 3.12.3
+[0m00:33:59.153708 [info ] [MainThread]: python path: C:\Users\eobay\OneDrive\Desktop\Projects\Y-Combinator_datapipline\.venv\Scripts\python.exe
+[0m00:33:59.154709 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m00:33:59.166710 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.databricks'
+[0m00:34:02.116322 [info ] [MainThread]: Using profiles dir at C:\Users\eobay\.dbt
+[0m00:34:02.118321 [info ] [MainThread]: Using profiles.yml file at C:\Users\eobay\.dbt\profiles.yml
+[0m00:34:02.119322 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\eobay\OneDrive\Desktop\Projects\Y-Combinator_datapipline\dags\dbt\dbt_project.yml
+[0m00:34:02.120322 [info ] [MainThread]: Configuration:
+[0m00:34:02.122325 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m00:34:02.123323 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m00:34:02.124320 [info ] [MainThread]: Required dependencies:
+[0m00:34:02.126324 [debug] [MainThread]: Executing "git --help"
+[0m00:34:02.461319 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:34:02.462322 [debug] [MainThread]: STDERR: "b''"
+[0m00:34:02.463319 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:34:02.464322 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m00:34:02.466326 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m00:34:02.467320 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "subcriber_pipline", target "dev" invalid: Runtime Error
+    Could not find adapter type databricks!
+
+
+[0m00:34:02.468318 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\eobay\OneDrive\Desktop\Projects\Y-Combinator_datapipline\dags\dbt\dbt_project.yml> not found
+
+[0m00:34:02.471318 [debug] [MainThread]: Command `dbt debug` failed at 00:34:02.471318 after 3.95 seconds
+[0m00:34:02.472318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257EFA61190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002578C8205F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002578C821610>]}
+[0m00:34:02.473317 [debug] [MainThread]: Flushing usage events

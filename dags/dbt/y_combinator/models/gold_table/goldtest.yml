@@ -1,0 +1,7 @@
+models:
+  - name: NigeriaYCcompanines
+    columns:
+      - name: company
+        tests:
+          - unique
+          - not_null

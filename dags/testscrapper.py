@@ -15,7 +15,6 @@ def scrape_y_combinator(url):  # Corrected function name
     options.page_load_strategy = 'none'
     # Initialize the Chrome driver with the specified options
     driver = Chrome(options=options) 
-    
     driver.implicitly_wait(10)  # Set an implicit wait for 10 seconds to allow elements to load
     driver.get(url)  # Navigate to the specified URL
     time.sleep(10)  # Wait for 10 seconds to allow the page to load
@@ -76,7 +75,7 @@ def copy_to_snowflake(df):
         schema=os.getenv("SNOWFLAKE_SCHEMA")
     )
     connection_details.cursor().execute("USE SCHEMA YC_Companies.RawYc_companies")
-    success, nchunks, nrows, _ = write_pandas(conn = connection_details, df = df, table_name="yc_companies",
+    success, nchunks, nrows, _ = write_pandas(conn = connection_details, df = df, table_name="COMPAINES",
                                                database ="YC_COMPANIES", schema="RAWYC_COMPANIES", auto_create_table=True,overwrite=True)
     return success , nchunks, nrows, _    
 # Call the function with the URL and store the returned DataFrame

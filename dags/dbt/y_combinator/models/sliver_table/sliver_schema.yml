@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: Y_Combinator
+    database: YC_COMPANIES
+    schema: RAWYC_COMPANIES
+    tables:
+      - name: COMPAINES
+        description: "'NAME' column will be the unique identifier"
+        columns:
+          - name: "name"  # Changed to uppercase
+            tests:
+              - not_null
+              - unique
+
