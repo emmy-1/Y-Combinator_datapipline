@@ -119,7 +119,9 @@ This DAG is designed to run dbt (data build tool) models on the data loaded into
 1. **Configure Snowflake Connection**: Ensure you have the necessary environment variables set for your Snowflake connection. You can use a `.env` file to store these variables securely.
  Code Snippet for Snowflake Configuration
 
-Create a `.env` file in your project directory with the following content:
+Create a `.env` file in your project directory with the following content:'
+
+
 SNOWFLAKE_USER=my_user
 SNOWFLAKE_PASSWORD=my_password
 SNOWFLAKE_ACCOUNT=my_account
@@ -131,14 +133,12 @@ SNOWFLAKE_SCHEMA=my_schema
 
 ### Loading Environment Variables
 
-In your `dags/pipeline_withdag.py`, ensure you load the environment variables:
+In your `dags/pipeline_withdag.py`, ensure you load the environment variables
+
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
-
-# ... existing code ...
-
 def copy_to_snowflake(df):
     import snowflake.connector
     from snowflake.connector.pandas_tools import write_pandas
