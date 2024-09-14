@@ -90,3 +90,69 @@ Deploy Your Project Locally
 
 Explanation of the DAGs
 =================================
+## Y_combinator_extract_load
+ `dags/pipeline_withdag.py`
+
+This DAG (Directed Acyclic Graph) is designed to extract data from the Y Combinator website and load it into a Snowflake database. Here's a breakdown of what it does:
+
+1. **Scrape Data**: The `scrape_y_combinator` function uses Selenium and Beautiful Soup to scrape company details from the Y Combinator website.
+2. **Load Data to Snowflake**: The `copy_to_snowflake` function takes the scraped data and loads it into a Snowflake database.
+3. **DAG Definition**: The DAG is defined to run daily, starting from January 1, 2023. It has two tasks:
+   - `Extract_data`: Runs the `run_scraper` function to scrape data.
+   - `load_to_snowflake`: Runs the `load_data` function to load the scraped data into Snowflake.
+
+## dbt_dag
+ `dags/dbt_models.py`
+
+This DAG is designed to run dbt (data build tool) models on the data loaded into Snowflake. Here's a breakdown:
+
+1. **Profile Configuration**: Configures the connection to Snowflake using user credentials.
+2. **DBT DAG Definition**: Defines a dbt DAG that runs daily, starting from September 10, 2023. It uses the profile configuration to connect to Snowflake and execute dbt models.
+
+# Steps to Adapt for Your Use Case
+
+1. **Configure Snowflake Connection**: Ensure you have the necessary environment variables set for your Snowflake connection. You can use a `.env` file to store these variables securely.
+ Code Snippet for Snowflake Configuration
+
+Create a `.env` file in your project directory with the following content:
+SNOWFLAKE_USER=my_user
+SNOWFLAKE_PASSWORD=my_password
+SNOWFLAKE_ACCOUNT=my_account
+SNOWFLAKE_WAREHOUSE=my_warehouse
+SNOWFLAKE_ROLE=my_role
+SNOWFLAKE_DATABASE=my_database
+SNOWFLAKE_SCHEMA=my_schema
+
+
+# Code Snippet for Loading Environment Variables
+
+In your `dags/pipeline_withdag.py`, ensure you load the environment variables:
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+# ... existing code ...
+
+def copy_to_snowflake(df):
+    import snowflake.connector
+    from snowflake.connector.pandas_tools import write_pandas
+
+    connection_details = snowflake.connector.connect(
+        user=os.getenv("SNOWFLAKE_USER"),
+        password=os.getenv("SNOWFLAKE_PASSWORD"),
+        account=os.getenv("SNOWFLAKE_ACCOUNT"),
+        warehouse=os.getenv("SNOWFLAKE_WAREHOUSE"),
+        role=os.getenv("SNOWFLAKE_ROLE"),
+        database=os.getenv("SNOWFLAKE_DATABASE"),
+        schema=os.getenv("SNOWFLAKE_SCHEMA")
+    )
+    # ... existing code ...
+
+
+
+
+
+
+
+
