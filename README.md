@@ -89,13 +89,12 @@ Deploy Your Project Locally
    You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
 
 ## :mag_right: Explanation of the DAGs
-=================================
 
 <details>
     <summary> Y_combinator_extract_load </summary>
   
 
- `dags/pipeline_withdag.py`
+`dags/pipeline_withdag.py`
 This DAG (Directed Acyclic Graph) is designed to extract data from the Y Combinator website and load it into a Snowflake database. Here's a breakdown of what it does:
 
 1. **Scrape Data**: The `scrape_y_combinator` function uses Selenium and Beautiful Soup to scrape company details from the Y Combinator website.
@@ -103,9 +102,12 @@ This DAG (Directed Acyclic Graph) is designed to extract data from the Y Combina
 3. **DAG Definition**: The DAG is defined to run daily, starting from January 1, 2023. It has two tasks:
    - `Extract_data`: Runs the `run_scraper` function to scrape data.
    - `load_to_snowflake`: Runs the `load_data` function to load the scraped data into Snowflake.
+</details>
 
-### dbt_dag
- `dags/dbt_models.py`
+<details>
+ <summary> dbt_dag </summary>
+  
+  `dags/dbt_models.py`
 
 This DAG is designed to run dbt (data build tool) models on the data loaded into Snowflake. Here's a breakdown:
 
