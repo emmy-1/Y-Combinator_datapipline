@@ -90,7 +90,7 @@ Deploy Your Project Locally
 
 Explanation of the DAGs
 =================================
-## Y_combinator_extract_load
+### Y_combinator_extract_load
  `dags/pipeline_withdag.py`
 
 This DAG (Directed Acyclic Graph) is designed to extract data from the Y Combinator website and load it into a Snowflake database. Here's a breakdown of what it does:
@@ -101,7 +101,7 @@ This DAG (Directed Acyclic Graph) is designed to extract data from the Y Combina
    - `Extract_data`: Runs the `run_scraper` function to scrape data.
    - `load_to_snowflake`: Runs the `load_data` function to load the scraped data into Snowflake.
 
-## dbt_dag
+### dbt_dag
  `dags/dbt_models.py`
 
 This DAG is designed to run dbt (data build tool) models on the data loaded into Snowflake. Here's a breakdown:
@@ -124,7 +124,7 @@ SNOWFLAKE_DATABASE=my_database
 SNOWFLAKE_SCHEMA=my_schema
 
 
-# Code Snippet for Loading Environment Variables
+### Loading Environment Variables
 
 In your `dags/pipeline_withdag.py`, ensure you load the environment variables:
 from dotenv import load_dotenv
