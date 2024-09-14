@@ -87,12 +87,14 @@ Deploy Your Project Locally
    Open your browser and go to [http://localhost:8080/](http://localhost:8080/) and log in with 'admin' for both your Username and Password.
 
    You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
-<details>
-Explanation of the DAGs
-=================================
-### Y_combinator_extract_load
- `dags/pipeline_withdag.py`
 
+## :mag_right: Explanation of the DAGs
+
+<details>
+    <summary> Y_combinator_extract_load </summary>
+  
+ `dags/pipeline_withdag.py`
+=================================
 This DAG (Directed Acyclic Graph) is designed to extract data from the Y Combinator website and load it into a Snowflake database. Here's a breakdown of what it does:
 
 1. **Scrape Data**: The `scrape_y_combinator` function uses Selenium and Beautiful Soup to scrape company details from the Y Combinator website.
