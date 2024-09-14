@@ -87,7 +87,7 @@ Deploy Your Project Locally
    Open your browser and go to [http://localhost:8080/](http://localhost:8080/) and log in with 'admin' for both your Username and Password.
 
    You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
-
+<details>
 Explanation of the DAGs
 =================================
 ### Y_combinator_extract_load
@@ -148,7 +148,7 @@ def copy_to_snowflake(df):
         schema=os.getenv("SNOWFLAKE_SCHEMA")
     )
     # ... existing code ...
-
+</details>
 
 
 
