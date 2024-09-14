@@ -114,10 +114,12 @@ This DAG is designed to run dbt (data build tool) models on the data loaded into
 1. **Profile Configuration**: Configures the connection to Snowflake using user credentials.
 2. **DBT DAG Definition**: Defines a dbt DAG that runs daily, starting from September 10, 2023. It uses the profile configuration to connect to Snowflake and execute dbt models.
 </details>
+
 # Steps to Adapt for Your Use Case
 
-1. **Configure Snowflake Connection**: Ensure you have the necessary environment variables set for your Snowflake connection. You can use a `.env` file to store these variables securely.
- Code Snippet for Snowflake Configuration
+1. **Configure Snowflake Connection**: Ensure you have the necessary environment variables set for your Snowflake connection. You can use a `.env` file to store these variables securely. You also need to set up snowflake connection in airflow by going to admin -- connection.
+
+Code Snippet for Snowflake Configuration
 
 Create a `.env` file in your project directory with the following content:'
 
