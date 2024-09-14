@@ -26,32 +26,67 @@ The Y Combinator Data Pipeline is an automated ETL (Extract, Transform, Load) so
 - **dbt**: For data transformation and modeling.
 - **Snowflake**: For data storage and analytics.
 
+## Project Structure
+
+The project is organized as follows:
+
+- `dags/`: Contains the Airflow DAGs and related scripts.
+  - `dbt/`: Contains dbt project files and configurations.
+    - `analyses/`: Directory for dbt analysis files.
+    - `logs/`: Directory for dbt log files.
+    - `macros/`: Directory for dbt macro files.
+    - `seeds/`: Directory for dbt seed files.
+    - `snapshots/`: Directory for dbt snapshot files.
+    - `tests/`: Directory for dbt test files.
+    - `dbt_project.yml`: dbt project configuration file.
+- `logs/`: Directory for general log files.
+- `.astro/`: Astronomer configuration files.
+- `.gitignore`: Git ignore file.
+- `LICENSE`: License file.
+- `README.md`: Project documentation file.
+- `requirements.txt`: Python dependencies file.
+
+## Getting Started
+
+### Prerequisites
+
+- Docker
+- Python 3.8+
+- Apache Airflow
+- dbt
+- Snowflake account
+
 Deploy Your Project Locally
 ===========================
 
-1. Start Airflow on your local machine by running `astro dev start`.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/y-combinator-datapipeline.git
+   cd y-combinator-datapipeline
+   ```
 
-This command will spin up 4 Docker containers on your machine, each for a different Airflow component:
+2. Start Airflow on your local machine:
+   ```sh
+   astro dev start
+   ```
 
-- Postgres: Airflow's Metadata Database
-- Webserver: The Airflow component responsible for rendering the Airflow UI
-- Scheduler: The Airflow component responsible for monitoring and triggering tasks
-- Triggerer: The Airflow component responsible for triggering deferred tasks
+   This command will spin up 4 Docker containers on your machine, each for a different Airflow component:
+   - Postgres: Airflow's Metadata Database
+   - Webserver: The Airflow component responsible for rendering the Airflow UI
+   - Scheduler: The Airflow component responsible for monitoring and triggering tasks
+   - Triggerer: The Airflow component responsible for triggering deferred tasks
 
-2. Verify that all 4 Docker containers were created by running 'docker ps'.
+3. Verify that all 4 Docker containers were created by running:
+   ```sh
+   docker ps
+   ```
 
-Note: Running 'astro dev start' will start your project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432. If you already have either of those ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
+   Note: Running `astro dev start` will start your project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432. If you already have either of those ports allocated, you can either stop your existing Docker containers or change the port.
 
-3. Access the Airflow UI for your local Airflow project. To do so, go to http://localhost:8080/ and log in with 'admin' for both your Username and Password.
+4. Access the Airflow UI for your local Airflow project:
+   Open your browser and go to [http://localhost:8080/](http://localhost:8080/) and log in with 'admin' for both your Username and Password.
 
-You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
+   You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
 
-Deploy Your Project to Astronomer
+Explanation of the DAGs
 =================================
-
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://www.astronomer.io/docs/astro/deploy-code/
-
-Contact
-=======
-
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
