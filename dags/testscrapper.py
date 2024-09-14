@@ -1,22 +1,24 @@
 from selenium import webdriver
-from selenium.webdriver import Chrome
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from utils.function import get_html_content
-from utils.function import find_text,find_html
 from bs4 import BeautifulSoup
 import time
 import pandas as pd
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 
 
 def scrape_y_combinator(url):  # Corrected function name
-    # Set up Chrome options for headless browsing and page load strategy
-    options = webdriver.ChromeOptions()
-    options.add_argument("--headless")
-    options.page_load_strategy = 'none'
-    # Initialize the Chrome driver with the specified options
-    driver = Chrome(options=options) 
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=chrome_options)
+    
+    driver.get(url)
     driver.implicitly_wait(10)  # Set an implicit wait for 10 seconds to allow elements to load
-    driver.get(url)  # Navigate to the specified URL
     time.sleep(10)  # Wait for 10 seconds to allow the page to load
 
     previous_count = 0  # Initialize previous count of companies found
