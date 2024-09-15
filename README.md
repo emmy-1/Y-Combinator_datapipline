@@ -94,7 +94,6 @@ Deploy Your Project Locally
     <summary> Y_combinator_extract_load </summary>
   
 
-`dags/pipeline_withdag.py`
 This DAG (Directed Acyclic Graph) is designed to extract data from the Y Combinator website and load it into a Snowflake database. Here's a breakdown of what it does:
 
 1. **Scrape Data**: The `scrape_y_combinator` function uses Selenium and Beautiful Soup to scrape company details from the Y Combinator website.
@@ -107,8 +106,6 @@ This DAG (Directed Acyclic Graph) is designed to extract data from the Y Combina
 <details>
  <summary> dbt_dag </summary>
   
-  `dags/dbt_models.py`
-
 This DAG is designed to run dbt (data build tool) models on the data loaded into Snowflake. Here's a breakdown:
 
 1. **Profile Configuration**: Configures the connection to Snowflake using user credentials.
