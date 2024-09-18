@@ -13,7 +13,8 @@ The Y Combinator Data Pipeline is an automated ETL (Extract, Transform, Load) so
 - **Data Loading**: Loads the transformed data into a Snowflake data warehouse, enabling efficient querying and analysis.
 - **Orchestration**: Uses Apache Airflow to schedule and manage the workflow, ensuring that data extraction, transformation, and loading tasks are executed in the correct order and at specified intervals.
 - **Modular Design**: The pipeline is designed with modular components, allowing for easy updates and maintenance. Utility functions for data processing are separated into dedicated files for better organization and reusability.
-- **Monitoring and Alams**:The system includes email notifications triggered after successful or failed events.
+- **Monitoring and Alams**: The system includes email notifications triggered after successful or failed events.
+
 **Use Cases:**
 - Analyze startup trends and funding patterns over time.
 - Generate reports on Y Combinator's portfolio companies for stakeholders.
