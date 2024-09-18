@@ -10,4 +10,4 @@ webserver_config.py
 airflow.cfg
 airflow.db
 testscript.py
-dags\dbt\logs\dbt.log
+**/dbt.log
