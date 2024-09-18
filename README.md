@@ -154,6 +154,15 @@ The final SELECT statement chooses specific columns from the `updated_transforma
 - It standardizes some industry names by appending additional information.
 </details>
 
+<details>
+    <summary> S24_batch</summary>
+    This dbt models filters the Y Combinator silver table to include only the S24 batch and Nigeria Companies respectively.
+
+  ### Details
+- Selects all columns from `YCslivertable`
+- Filters for records where `batch` is 'S24'
+- Likely represents the Summer 2024 Y Combinator cohort
+  </details>
 ## Learning Outcomes
 
 
