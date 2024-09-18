@@ -177,6 +177,7 @@ The final SELECT statement chooses specific columns from the `updated_transforma
 ## Learning Outcomes
 I Must say this has been a very insight full project for me as it allowed me work with tools i have not worked before e.g snowflake and selenium. Some of the most important concept used here were given as comments posted on my previuus project.[Check out this Reddit comment](https://www.reddit.com/r/dataengineering/comments/1fbynu7/comment/lmoe0zx/?context=3)
 
+The core problem with my previous project was the mistake of combining tasks during the extract phase. Instead of just extracting the data, transformations were also applied at the same time.This resulted in a fragile pipeline that couldn’t rebuild historical data if the original sources were no longer available. The "T" (transformation) sneaking into the early stages caused data to be altered before being saved in its raw form, which is risky because once the source is gone, you can't easily reproduce the untransformed data
 
 
 
