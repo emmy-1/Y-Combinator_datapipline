@@ -175,7 +175,7 @@ The final SELECT statement chooses specific columns from the `updated_transforma
 - Select all columns from `YCslivertable`
 - Filters for records where `batch` is 'Nigeria'
   </details>
-## Learning Outcomes
+## Key Takeaway.
 I Must say this has been a very insight full project for me as it allowed me work with tools i have not worked before e.g snowflake and selenium. Some of the most important concept used here were given as comments posted on my previuus project.[Check out this Reddit comment](https://www.reddit.com/r/dataengineering/comments/1fbynu7/comment/lmoe0zx/?context=3)
 
 The main issue with my previous project was that I made a mistake by combining tasks during the data extraction phase. Instead of just extracting the data, I also applied transformations at the same time.This resulted in a fragile pipeline that couldn’t rebuild historical data if the original sources were no longer available. The "T" (transformation) sneaking into the early stages caused data to be altered before being saved in its raw form, which is risky because once the source is gone, you can't easily reproduce the untransformed data. "Upon reflection and reading others' take on the matter, a cardinal rule of data engineering is to always preserve your data in its raw form. Transformation should only occur after the data has been safely extracted and stored in its raw form. This ensures that the pipeline can always regenerate historical data, even if the original sources are no longer available.
@@ -183,4 +183,7 @@ The main issue with my previous project was that I made a mistake by combining t
 Taking this into consideration, I adjusted my approach to managing this project. By loading the data into Snowflake in its raw form, I maintained the original data. This guarantees that I always have a backup and can make changes later without worrying about losing or modifying the original dataset. This is a critical step for ensuring the resilience of the pipeline, enabling you to reconstruct historical data if necessary.
 
 With the data in its raw form in Snowflake, it was easier to build a silver layer and gold layer using dbt. I was able to create a Silver table, which contains data-cleaning logic. Then, moved to the Gold layer, which contains ready-to-use aggregated data. This approach provides a modular and efficient way to handle data transformations, ensuring that each transformation step is clearly defined and happens only when needed.
+
+## Conclusion
+In this project, I learned how important it is to keep each stage of the ETL process focused on its specific task and to avoid making early transformations during data extraction. Instead of the traditional Medallion architecture, I first ingested raw data into Snowflake and used dbt to progress step by step, creating a Silver table for data cleaning and a Gold layer for ready-to-use aggregations. This project was a great hands-on experience with new tools like Snowflake, Selenium, and dbt, and it helped me reinforce best practices in data pipeline design and management.
 
