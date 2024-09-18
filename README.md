@@ -98,7 +98,7 @@ This DAG (Directed Acyclic Graph) is designed to extract data from the Y Combina
 
 1. **Scrape Data**: The `scrape_y_combinator` function uses Selenium and Beautiful Soup to scrape company details from the Y Combinator website.
 2. **Load Data to Snowflake**: The `copy_to_snowflake` function takes the scraped data and loads it into a Snowflake database.
-3. **DAG Definition**: The DAG is defined to run daily, starting from January 1, 2023. It has two tasks:
+3. **DAG Definition**: The DAG is defined to run weekly, starting from January 1, 2023. It has two tasks:
    - `Extract_data`: Runs the `run_scraper` function to scrape data.
    - `load_to_snowflake`: Runs the `load_data` function to load the scraped data into Snowflake.
 </details>
