@@ -117,6 +117,44 @@ This DAG is designed to run dbt (data build tool) models on the data loaded into
 
 <details>
     <summary> YCslivertable.sql </summary>
+
+  # YCslivertable SQL Transformation
+
+This SQL code creates a view or table called `YCslivertable` from a source table named `COMPAINES` in the `Y_Combinator` schema. The transformation is done in two steps using Common Table Expressions (CTEs).
+
+## First CTE: `transformation`
+
+This CTE performs the following transformations:
+
+1. Renames the "name" column to "company".
+2. Creates a "value_proposition" column from the "Description" column, replacing empty strings with 'Unspecified'.
+3. Splits the "Location" column into city, state, and country, using default values when parts are missing.
+4. Splits the "tags" column into batch, customer_type, industry, and additional_info.
+5. Keeps the original "tags" column as other_info.
+
+## Second CTE: `updated_transformation`
+
+This CTE further refines the data by:
+
+1. Keeping most columns from the first transformation.
+2. Modifying the "industry" column:
+   - If the industry is 'Travel', it appends 'Leisure and Tourism'.
+   - If the industry is 'Engineering', it appends 'Product and Design'.
+   - Otherwise, it keeps the original industry value.
+
+## Final SELECT Statement
+
+The final SELECT statement chooses specific columns from the `updated_transformation` CTE to include in the final output.
+
+## Key Points
+
+- This transformation cleans and structures data from the Y Combinator companies database.
+- It handles missing or empty values by providing default values like 'Unspecified', 'Remote', or 'World'.
+- The code splits compound fields (Location and tags) into separate columns for easier analysis.
+- It standardizes some industry names by appending additional information.
+</details>
+
+This transformed data can be used for various analyses of Y Combinator companies, including geographical distribution, industry focus, and batch information.
 ## Learning Outcomes
 
 
