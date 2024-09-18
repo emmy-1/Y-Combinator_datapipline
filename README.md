@@ -112,6 +112,11 @@ This DAG is designed to run dbt (data build tool) models on the data loaded into
 2. **DBT DAG Definition**: Defines a dbt DAG that runs daily, starting from September 10, 2023. It uses the profile configuration to connect to Snowflake and execute dbt models.
 </details>
 
+
+## :mag_right: Explanation of dbt models
+
+<details>
+    <summary> YCslivertable.sql </summary>
 ## Learning Outcomes
 
 
