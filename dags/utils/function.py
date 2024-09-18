@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from airflow.utils.email import send_email
 
 def get_html_content(url):
     response = requests.get(url)
@@ -12,4 +13,4 @@ def find_text(element,tag, class_name,default = None):
 
 def find_html(element,tag, class_name,default = None):
     found_html = element.find(tag, class_= class_name)
-    return found_html if found_html else default
+    return found_html if found_html else default    
