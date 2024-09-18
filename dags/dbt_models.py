@@ -1,3 +1,4 @@
+# this file is used to run dbt models in snowflake
 import os
 from datetime import datetime
 from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
