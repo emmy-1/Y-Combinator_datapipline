@@ -14,12 +14,12 @@ from dotenv import load_dotenv
 import os
 
 
-
+#load environment variables
 load_dotenv(".env")
 smtp_user = os.getenv("AIRFLOW__SMTP__SMTP_USER")
 smtp_password = os.getenv("AIRFLOW__SMTP__SMTP_PASSWORD")
 
-
+#failure email function
 def failure_email(context):
     to_email = smtp_user  # Using the loaded SMTP_USER
     subject = "Airflow Task Failure"
@@ -34,7 +34,8 @@ def failure_email(context):
     """
     send_email(to=to_email, subject=subject, html_content=body, 
                smtp_user=smtp_user, smtp_password=smtp_password)
-    
+
+#success email function
 def success_email(context):
        to_email = smtp_user  # Using the loaded SMTP_USER
        subject = "Airflow Task Success"
@@ -160,7 +161,7 @@ with DAG(
     default_args=default_args,
     start_date=datetime(2023, 1, 1),
     description='This DAG extracts data from the Y Combinator website and loads it into a Snowflake database',
-    schedule='@daily',
+    schedule='@weekly',
     catchup=False,
     tags=["Y_combinator"],
 ) as dag:
