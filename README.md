@@ -181,4 +181,5 @@ The main issue with my previous project was that I made a mistake by combining t
 
 Taking this into consideration, I adjusted my approach to managing this project. By loading the data into Snowflake in its raw form, I maintained the original data. This guarantees that I always have a backup and can make changes later without worrying about losing or modifying the original dataset. This is a critical step for ensuring the resilience of the pipeline, enabling you to reconstruct historical data if necessary.
 
+With the data in its raw form in Snowflake, it was easier to build a silver layer and gold layer using dbt. I was able to create a Silver table, which contains data-cleaning logic. Then, moved to the Gold layer, which contains ready-to-use aggregated data. This approach provides a modular and efficient way to handle data transformations, ensuring that each transformation step is clearly defined and happens only when needed.
 
