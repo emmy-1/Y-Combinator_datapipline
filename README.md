@@ -112,46 +112,7 @@ This DAG is designed to run dbt (data build tool) models on the data loaded into
 2. **DBT DAG Definition**: Defines a dbt DAG that runs daily, starting from September 10, 2023. It uses the profile configuration to connect to Snowflake and execute dbt models.
 </details>
 
-# Steps to Adapt for Your Use Case
-
-1. **Configure Snowflake Connection**: Ensure you have the necessary environment variables set for your Snowflake connection. You can use a `.env` file to store these variables securely. You also need to set up snowflake connection in airflow by going to admin -- connection.
-
-Code Snippet for Snowflake Configuration
-
-Create a `.env` file in your project directory with the following content:'
-
-
-SNOWFLAKE_USER=my_user
-SNOWFLAKE_PASSWORD=my_password
-SNOWFLAKE_ACCOUNT=my_account
-SNOWFLAKE_WAREHOUSE=my_warehouse
-SNOWFLAKE_ROLE=my_role
-SNOWFLAKE_DATABASE=my_database
-SNOWFLAKE_SCHEMA=my_schema
-
-
-### Loading Environment Variables
-
-In your `dags/pipeline_withdag.py`, ensure you load the environment variables
-
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-def copy_to_snowflake(df):
-    import snowflake.connector
-    from snowflake.connector.pandas_tools import write_pandas
-
-    connection_details = snowflake.connector.connect(
-        user=os.getenv("SNOWFLAKE_USER"),
-        password=os.getenv("SNOWFLAKE_PASSWORD"),
-        account=os.getenv("SNOWFLAKE_ACCOUNT"),
-        warehouse=os.getenv("SNOWFLAKE_WAREHOUSE"),
-        role=os.getenv("SNOWFLAKE_ROLE"),
-        database=os.getenv("SNOWFLAKE_DATABASE"),
-        schema=os.getenv("SNOWFLAKE_SCHEMA")
-    )
-    # ... existing code ...
+## Learning Outcomes
 
 
 
