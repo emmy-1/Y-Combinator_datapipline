@@ -118,7 +118,7 @@ This DAG is designed to run dbt (data build tool) models on the data loaded into
 <details>
     <summary> YCslivertable.sql </summary>
 
-  # YCslivertable SQL Transformation
+### YCslivertable SQL Transformation
 
 This SQL code creates a view or table called `YCslivertable` from a source table named `COMPAINES` in the `Y_Combinator` schema. The transformation is done in two steps using Common Table Expressions (CTEs).
 
@@ -154,7 +154,6 @@ The final SELECT statement chooses specific columns from the `updated_transforma
 - It standardizes some industry names by appending additional information.
 </details>
 
-This transformed data can be used for various analyses of Y Combinator companies, including geographical distribution, industry focus, and batch information.
 ## Learning Outcomes
 
 
