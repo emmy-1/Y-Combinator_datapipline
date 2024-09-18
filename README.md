@@ -175,7 +175,7 @@ The final SELECT statement chooses specific columns from the `updated_transforma
 - Filters for records where `batch` is 'Nigeria'
   </details>
 ## Learning Outcomes
-
+I Must say this has been a very insight full project for me as it allowed me work with tools i have not worked before e.g snowflake and selenium. Some of the most important concept used here were given as comments posted on my previuus project.[Check out this Reddit comment](https://www.reddit.com/r/dataengineering/comments/1fbynu7/comment/lmoe0zx/?context=3)
 
 
 
