@@ -156,12 +156,23 @@ The final SELECT statement chooses specific columns from the `updated_transforma
 
 <details>
     <summary> S24_batch</summary>
-    This dbt models filters the Y Combinator silver table to include only the S24 batch and Nigeria Companies respectively.
+    This dbt model filters the Y Combinator silver table to include only companies from the S24 batch.
 
   ### Details
 - Selects all columns from `YCslivertable`
 - Filters for records where `batch` is 'S24'
-- Likely represents the Summer 2024 Y Combinator cohort
+  *Note*
+- S24 represents the Summer 2024 Y Combinator cohort
+  </details>
+
+  
+<details>
+    <summary> NigeriaYCcompanines</summary>
+    This dbt model filters the Y Combinator silver table to include only companies from Nigeria.
+
+  ### Details
+- Select all columns from `YCslivertable`
+- Filters for records where `batch` is 'Nigeria'
   </details>
 ## Learning Outcomes
 
