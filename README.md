@@ -177,9 +177,8 @@ The final SELECT statement chooses specific columns from the `updated_transforma
 ## Learning Outcomes
 I Must say this has been a very insight full project for me as it allowed me work with tools i have not worked before e.g snowflake and selenium. Some of the most important concept used here were given as comments posted on my previuus project.[Check out this Reddit comment](https://www.reddit.com/r/dataengineering/comments/1fbynu7/comment/lmoe0zx/?context=3)
 
-The core problem with my previous project was the mistake of combining tasks during the extract phase. Instead of just extracting the data, transformations were also applied at the same time.This resulted in a fragile pipeline that couldn’t rebuild historical data if the original sources were no longer available. The "T" (transformation) sneaking into the early stages caused data to be altered before being saved in its raw form, which is risky because once the source is gone, you can't easily reproduce the untransformed data
+The main issue with my previous project was that I made a mistake by combining tasks during the data extraction phase. Instead of just extracting the data, I also applied transformations at the same time.This resulted in a fragile pipeline that couldn’t rebuild historical data if the original sources were no longer available. The "T" (transformation) sneaking into the early stages caused data to be altered before being saved in its raw form, which is risky because once the source is gone, you can't easily reproduce the untransformed data. "Upon reflection and reading others' take on the matter, a cardinal rule of data engineering is to always preserve your data in its raw form. Transformation should only occur after the data has been safely extracted and stored in its raw form. This ensures that the pipeline can always regenerate historical data, even if the original sources are no longer available.
 
-
-
+Taking this into consideration, I adjusted my approach to managing this project. By loading the data into Snowflake in its raw form, I maintained the original data. This guarantees that I always have a backup and can make changes later without worrying about losing or modifying the original dataset. This is a critical step for ensuring the resilience of the pipeline, enabling you to reconstruct historical data if necessary.
 
 
