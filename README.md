@@ -2,7 +2,7 @@
 
 Y Combinator DataPipline
 ========                                    
-The Y Combinator Data Pipeline is an automated ETL (Extract, Transform, Load) solution designed to extract company information from Y Combinator's API, transform the data into a structured format, and load it into a Snowflake data warehouse for analysis and reporting. This pipeline leverages Apache Airflow for orchestration, dbt for data transformation, snowflake for data warehousing, and Python for data extraction and processing.
+The Y Combinator Data Pipeline is an automated ETL (Extract, Transform, Load) solution designed to extract company information from Y Combinator's website, transform the data into a structured format, and load it into a Snowflake data warehouse for analysis and reporting. This pipeline leverages Apache Airflow for orchestration, dbt for data transformation, snowflake for data warehousing, and Python for data extraction and processing.
 
 
 ![Ycombinator - page 1 (1)](https://github.com/user-attachments/assets/43a06ed3-6acd-44e4-a6ca-08edd3f1f56d)
